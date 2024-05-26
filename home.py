@@ -71,6 +71,7 @@ try:
         with col1:
             im =image_select(label="select", images=a, use_container_width=False, index=-1)
         with col2:
-            img_op(im)
+            st.write(predict(Image.open(im).resize((250,250))))
+            st.image(im)
 except:
     st.warning("Please choose a file")
