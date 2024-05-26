@@ -5,7 +5,7 @@ import numpy as np
 
 def predict(img):
     # im=Image.open(img).resize((250,250))
-    img_array = tf.keras.utils.img_to_array(im)
+    img_array = tf.keras.utils.img_to_array(img)
     img_batch = np.expand_dims(img_array, axis=0)
 
     interpreter = tf.lite.Interpreter(model_path = 'tf_lite_model.tflite')
