@@ -1,11 +1,10 @@
 import tensorflow as tf
 import numpy as np
-from PIL import Image
 from messenger import message
 
 
 def predict(img):
-    im=Image.open(img).resize((250,250))
+    # im=Image.open(img).resize((250,250))
     img_array = tf.keras.utils.img_to_array(im)
     img_batch = np.expand_dims(img_array, axis=0)
 
