@@ -2,7 +2,6 @@ import streamlit as st
 from predictor import predict
 from PIL import Image
 from streamlit_image_select import image_select
-from pathlib import Path
 from io import BytesIO
 import glob
 from vidPredictor import vid
@@ -44,7 +43,7 @@ def img_op(f):
 
 uploaded_file = st.file_uploader("Upload your file here...", type=['png', 'jpeg', 'jpg', 'mp4'])
 try:
-    if Path(uploaded_file.name).suffix == '.mp4':
+    if uploaded_file.type[-3:] == 'mp4':
         vid_op(uploaded_file)  #video function call
     else:
         img_op(uploaded_file)
