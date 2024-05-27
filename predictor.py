@@ -1,6 +1,6 @@
 import tensorflow as tf
 import numpy as np
-# from messenger import message
+from messenger import message
 
 
 def predict(img):
@@ -20,7 +20,7 @@ def predict(img):
     tflite_model_predictions = interpreter.get_tensor(output_details[0]['index'])
     # print("Prediction results:")
     if((tflite_model_predictions[0][1]  > 0.5).astype("int32")==0):
-        # message()
+        message()
         return("Accident Detected")
     else:
         return("No Accident")
